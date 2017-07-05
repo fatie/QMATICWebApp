@@ -48,28 +48,40 @@
 	float: none;
 }
 font-family
+
+
 :
+
  
+
 '
 Open
+
  
+
 Sans
+
+
 '
 ,
 sans-serif
+
+
 ;
 </style>
 </head>
 <body>
 	<%
-	List<Queue> qs = (List<Queue>) request.getAttribute("qs");
+		List<Queue> qs = (List<Queue>) request.getAttribute("qs");
 	%>
 
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
 				<h1 align="center">
-					<span>QMATIC Borough Performance Details - <%out.print(qs.get(0).getBranchName());%><img
+					<span>QMATIC Borough Performance Details - <%
+						out.print(qs.get(0).getBranchName());
+					%><img
 						align="right" alt="DOB" src="img/NYCDOB.svg.png"></span>
 				</h1>
 			</div>
@@ -103,6 +115,11 @@ sans-serif
 			;
 		%>
 	</table>
-
+	<br><br>
+	<center>
+		<form name="movingBack" action="index.jsp">
+			<input type="submit" name="Back" value="Back">
+		</form>
+	</center>
 </body>
 </html>

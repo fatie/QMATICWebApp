@@ -336,6 +336,12 @@
 		</div>
 
 	</div>
+	<br><br>
+	<center>
+		<form name="refresh" action="index.jsp">
+			<input type="submit" name="Refresh" value="Refresh">
+		</form>
+	</center>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
