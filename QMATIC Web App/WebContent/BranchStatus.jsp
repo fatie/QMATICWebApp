@@ -78,12 +78,12 @@ sans-serif
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1 align="center">
+				<h2 align="center">
 					<span>QMATIC Borough Performance Details - <%
 						out.print(qs.get(0).getBranchName());
 					%><img
 						align="right" alt="DOB" src="img/NYCDOB.svg.png"></span>
-				</h1>
+				</h2>
 			</div>
 		</div>
 

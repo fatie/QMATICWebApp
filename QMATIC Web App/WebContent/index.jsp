@@ -21,7 +21,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>QMATAIC Borough Performance Summary</title>
+<title>QMATIC Borough Performance Summary</title>
 
 <link href="css/.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -33,10 +33,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="page-header">
-					<h1 align="center">
+					<h2 align="center">
 						<span>QMATIC Borough Performance Summary<img align="right"
 							alt="DOB" src="img/NYCDOB.svg.png"></span>
-					</h1>
+					</h2>
 				</div>
 			</div>
 
