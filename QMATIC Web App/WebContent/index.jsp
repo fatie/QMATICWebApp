@@ -37,6 +37,7 @@
 						<span>QMATIC Current Wait Times<img align="right"
 							alt="DOB" src="img/NYCDOB.svg.png"></span>
 					</h2>
+					<div class="time"><p align = "center">Click on a borough name for the breakdown by queue</p></div>
 				</div>
 			</div>
 
