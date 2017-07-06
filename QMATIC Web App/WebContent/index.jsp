@@ -21,7 +21,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>QMATIC Borough Performance Summary</title>
+<title>QMATIC Current Wait Times</title>
 
 <link href="css/.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -34,7 +34,7 @@
 			<div class="col-md-12">
 				<div class="page-header">
 					<h2 align="center">
-						<span>QMATIC Borough Performance Summary<img align="right"
+						<span>QMATIC Current Wait Times<img align="right"
 							alt="DOB" src="img/NYCDOB.svg.png"></span>
 					</h2>
 				</div>
@@ -336,6 +336,9 @@
 		</div>
 
 	</div>
+	<div class="time">
+	<center>
+	<p>Average wait time is the average waiting time, in minutes, of all customers currently waiting at each branch</p></center></div>
 	<br><br>
 	<center>
 		<form name="refresh" action="index.jsp">

@@ -35,11 +35,13 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans"
 	rel="stylesheet">
 
+<link href="css/.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>QMATIC Borought Detailed Status</title>
+<title>QMATIC Detailed Wait Times</title>
 <style>
 .table {
 	border-radius: 5px;
@@ -79,7 +81,7 @@ sans-serif
 		<div class="col-md-12">
 			<div class="page-header">
 				<h2 align="center">
-					<span>QMATIC Borough Performance Details - <%
+					<span>QMATIC Detailed Wait Times - <%
 						out.print(qs.get(0).getBranchName());
 					%><img
 						align="right" alt="DOB" src="img/NYCDOB.svg.png"></span>
@@ -94,27 +96,25 @@ sans-serif
 		<tr class="warning">
 			<th>Queue Name</th>
 			<th>Customers Waiting</th>
-			<th>Waiting Time (mins)</th>
-			<th>Estimated Waiting Time (mins)</th>
+			<th>Wait Time (mins)</th>
 			<th>Customers Served</th>
 
 		</tr>
 
 		<%
 			for (Queue q : qs) {
-				String ewt;
-				if (q.getEstimatedWaitingTime() == -1) {
-					ewt = "N/A";
-				} else {
-					ewt = String.valueOf(q.getEstimatedWaitingTime() / 60);
-				}
+				
 				out.print("<tr><td>" + q.getName() + "</td><td>" + q.getCustomersWaiting() + "</td><td>"
-						+ q.getWaitingTime() / 60 + "</td><td>" + ewt + "</td><td>" + q.getCustomersServed()
+						+ q.getWaitingTime() / 60 + "</td><td>" + q.getCustomersServed()
 						+ "</td></tr>");
 			}
 			;
 		%>
 	</table>
+	<br>
+	<div class="time">
+	<center>
+	<p>Wait Time is average wait time, in minutes, of all customers currently waiting at each queue for specific branches</p></center></div>
 	<br><br>
 	<center>
 		<form name="movingBack" action="index.jsp">
