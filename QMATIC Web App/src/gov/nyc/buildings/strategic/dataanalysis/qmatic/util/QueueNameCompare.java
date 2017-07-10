@@ -10,5 +10,5 @@ public class QueueNameCompare implements Comparator<Queue> {
 	public int compare(Queue o1, Queue o2) {
 		return o1.getName().compareTo(o2.getName());
 	}
-
+ 
 }

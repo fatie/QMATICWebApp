@@ -23,7 +23,7 @@ public class QueuesDao extends Dao<List<Queue>, String> {
 	private String getBranchId() {
 		return branchId;
 	}
-
+ 
 	private void setBranchId(String branchId) {
 		this.branchId = branchId;
 	}
