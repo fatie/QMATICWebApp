@@ -40,7 +40,7 @@ public class QueuesDao extends Dao<List<Queue>, String> {
 					.path("queues").request().accept(MediaType.APPLICATION_JSON).get(new GenericType<List<Queue>>() {
 					});
 		QueueNameCompare queueNameCompare = new QueueNameCompare();
-		Collections.sort(queues, queueNameCompare);
+		Collections.sort(queues, queueNameCompare); 
 		return queues;
 	}
 
