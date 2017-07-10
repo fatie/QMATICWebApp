@@ -104,7 +104,12 @@ sans-serif
 		<%
 			for (Queue q : qs) {
 				
-				out.print("<tr><td>" + q.getName() + "</td><td>" + q.getCustomersWaiting() + "</td><td>"
+				String queueName = q.getName();
+				if (q.getBranchName().equalsIgnoreCase("Queens") && queueName.equalsIgnoreCase("Construction Developmentt")){
+					queueName = queueName.substring(0,24);
+				}
+				
+				out.print("<tr><td>" + queueName + "</td><td>" + q.getCustomersWaiting() + "</td><td>"
 						+ q.getWaitingTime() / 60 + "</td><td>" + q.getCustomersServed()
 						+ "</td></tr>");
 			}
