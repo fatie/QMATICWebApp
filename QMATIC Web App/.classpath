@@ -15,5 +15,19 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-vintage-engine-4.12.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-jupiter-migrationsupport-5.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-jupiter-params-5.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-jupiter-engine-5.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-jupiter-api-5.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-surefire-provider-1.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-suite-api-1.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-runner-1.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-launcher-1.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-gradle-plugin-1.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-engine-1.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-console-standalone-1.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-console-1.0.0-M5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fguo/Documents/tools/download/java-lib/junit5/junit-platform-commons-1.0.0-M5.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
