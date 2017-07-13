@@ -15,9 +15,9 @@ import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.QueueVisit;
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.QueueVisits;
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.util.QueueNameCompare;
 
-public class QueuesDao extends Dao<List<Queue>, String> {
+public class BranchStatusFromQueuesDao extends Dao<BranchStatusFromQueues, String> {
 
-	private static final Logger logger = LogManager.getLogger(QueuesDao.class);
+	private static final Logger logger = LogManager.getLogger(BranchStatusFromQueuesDao.class);
 	private String branchId;
 
 	private String getBranchId() {
@@ -28,7 +28,7 @@ public class QueuesDao extends Dao<List<Queue>, String> {
 		this.branchId = branchId;
 	}
 
-	public QueuesDao(String branchId) {
+	public BranchStatusFromQueuesDao(String branchId) {
 		this.setBranchId(branchId);
 	}
 

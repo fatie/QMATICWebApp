@@ -1,5 +1,7 @@
 package gov.nyc.buildings.strategic.dataanalysis.qmatic.model;
 
+import java.util.List;
+
 public class BranchStatus {
 	private int id;
 	private String name;
@@ -10,6 +12,7 @@ public class BranchStatus {
 	private int totalWaitingTime;
 	private int customersBeingServed;
 	private Parameters parameters;
+	private List<Queue> queues;
 	
 	public BranchStatus(){
 		
@@ -105,8 +108,18 @@ public class BranchStatus {
 	}
 
 
-	public void setpParameters(Parameters parameters) {
+	public void setParameters(Parameters parameters) {
 		this.parameters = parameters;
+	}
+	
+
+	public List<Queue> getQueues() {
+		return queues;
+	}
+
+
+	public void setQueues(List<Queue> queues) {
+		this.queues = queues;
 	}
 
 

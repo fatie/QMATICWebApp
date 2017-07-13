@@ -110,7 +110,7 @@ sans-serif
 				}
 				
 				out.print("<tr><td>" + queueName + "</td><td>" + q.getCustomersWaiting() + "</td><td>"
-						+ q.getWaitingTime() / 60 + "</td><td>" + q.getCustomersServed()
+						+ q.getAverageWaitTimeInMinute() + "</td><td>" + q.getCustomersServed()
 						+ "</td></tr>");
 			}
 			;
@@ -122,7 +122,7 @@ sans-serif
 	<p>Wait Time is average wait time, in minutes, of all customers currently waiting at each queue for specific branches</p></center></div>
 	<br><br>
 	<center>
-		<form name="movingBack" action="index.jsp">
+		<form name="movingBack" method="post" action="index.jsp">
 			<input type="submit" name="Back" value="Back">
 		</form>
 	</center>

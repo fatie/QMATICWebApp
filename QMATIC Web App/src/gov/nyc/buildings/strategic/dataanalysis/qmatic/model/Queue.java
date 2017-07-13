@@ -12,6 +12,7 @@ public class Queue {
 	private int appointmentWaitingTime;
 	private int estimatedWaitingTime;
 	private int customersServed;
+	private QueueVisits queueVisits;
 	
 	public Queue(){
 		
@@ -105,8 +106,38 @@ public class Queue {
 		this.customersServed = customersServed;
 	}
 	
+	
+	
+//	public String toString(){
+//		return("Branch Name: "+branchName+"; Unit Name: "+name+"; Customers waiting: " + customersWaiting+"; Waiting Time: "+waitingTime+"; Customer Served: "+customersServed + "; queue id: " + id);
+//	}
+	
+	public QueueVisits getQueueVisits() {
+		return queueVisits;
+	}
+
+	public void setQueueVisits(QueueVisits queueVisits) {
+		this.queueVisits = queueVisits;
+	}
+
 	public String toString(){
-		return("Branch Name: "+branchName+"; Unit Name: "+name+"; Customers waiting: " + customersWaiting+"; Waiting Time: "+waitingTime+"; Customer Served: "+customersServed);
+		return("queue id: " + id + "; queue name: " + name + "; average wait time: " + this.getAverageWaitTimeInMinute());
+	}
+	
+	public int getQueueVisitsSize(){
+		return this.getQueueVisits().getQueueVisitsSize();
+	}
+	
+	public int getTotalWaitTime(){
+		return this.getQueueVisits().getTotalWaitTime();
+	}
+	
+	public int getAverageWaitTime(){
+		return this.getQueueVisits().getAverageWaitTime();
+	}
+	
+	public int getAverageWaitTimeInMinute(){
+		return this.getQueueVisits().getAverageWaitTimeInMinute();
 	}
 	
 

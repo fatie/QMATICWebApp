@@ -342,7 +342,7 @@
 	<p>Average wait time is the average waiting time, in minutes, of all customers currently waiting at each branch</p></center></div>
 	<br><br>
 	<center>
-		<form name="refresh" action="index.jsp">
+		<form name="refresh" method="post" action="index.jsp">
 			<input type="submit" name="Refresh" value="Refresh">
 		</form>
 	</center>
