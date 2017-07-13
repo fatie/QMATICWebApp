@@ -6,6 +6,7 @@ public class QueueVisit {
 	private String customerName;
 	private int waitingTime;
 	private int appointmentWaitingTime;
+	
 	public String getServiceName() {
 		return serviceName;
 	}

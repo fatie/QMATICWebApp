@@ -4,6 +4,7 @@ import java.util.List;
 
 public class QueueVisits {
 	private List<QueueVisit> queueVisits;
+	private boolean wsReadFlag = false;
 	
 	public QueueVisits(List<QueueVisit> queueVisits){
 		this.setQueueVisits(queueVisits);
@@ -55,6 +56,14 @@ public class QueueVisits {
 		}
 		return sb.toString();
 		
+	}
+
+	public boolean isWsReadFlag() {
+		return wsReadFlag;
+	}
+
+	public void setWsReadFlag(boolean wsReadFlag) {
+		this.wsReadFlag = wsReadFlag;
 	}
 	
 }

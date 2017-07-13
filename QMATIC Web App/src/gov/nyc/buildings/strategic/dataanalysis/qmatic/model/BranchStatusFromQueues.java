@@ -6,7 +6,23 @@ public class BranchStatusFromQueues {
 	private List<Queue> queues;
 	private int id;
 	private String name;
+	private String groupName;
+	private String groupId;
 	
+	
+	
+	public String getGroupName() {
+		return groupName;
+	}
+	public void setGroupName(String groupName) {
+		this.groupName = groupName;
+	}
+	public String getGroupId() {
+		return groupId;
+	}
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
 	public List<Queue> getQueues() {
 		return queues;
 	}
@@ -28,7 +44,9 @@ public class BranchStatusFromQueues {
 	
 	public int getBranchTotalWait(){
 		int sum = 0;
-		for (Queue queue : this.queues){
+		int counter = 0;
+		for (Queue queue : this.getQueues()){
+			if(queue.getQueueVisits().isWsReadFlag())
 			sum+=queue.getQueueVisitsSize();
 		}
 		return sum;
@@ -44,6 +62,20 @@ public class BranchStatusFromQueues {
 	
 	public int getBranchAverageWaitTimeInMinute(){
 		return getBranchAverageWaitTime()/60;
+	}
+	
+	@Override
+	public String toString(){
+		StringBuffer sb = new StringBuffer();
+		for (Queue q : this.getQueues()){
+			sb.append(q.getName());
+			sb.append(";");
+			sb.append(q.getAverageWaitTimeInMinute());
+			sb.append(";");
+			sb.append(q.getQueueVisitsSize());
+			sb.append(";\n");
+		}
+		return this.getId()+";"+this.getName()+";"+this.getGroupId()+";"+this.getGroupName()+";"+this.getBranchAverageWaitTimeInMinute()+";" +this.getBranchTotalWait()+ ";\n"+sb;
 	}
 
 }

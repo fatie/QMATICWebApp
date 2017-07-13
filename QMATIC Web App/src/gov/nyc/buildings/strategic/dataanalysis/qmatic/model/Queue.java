@@ -13,9 +13,9 @@ public class Queue {
 	private int estimatedWaitingTime;
 	private int customersServed;
 	private QueueVisits queueVisits;
-	
-	public Queue(){
-		
+
+	public Queue() {
+
 	}
 
 	public int getId() {
@@ -105,13 +105,13 @@ public class Queue {
 	public void setCustomersServed(int customersServed) {
 		this.customersServed = customersServed;
 	}
-	
-	
-	
-//	public String toString(){
-//		return("Branch Name: "+branchName+"; Unit Name: "+name+"; Customers waiting: " + customersWaiting+"; Waiting Time: "+waitingTime+"; Customer Served: "+customersServed + "; queue id: " + id);
-//	}
-	
+
+	// public String toString(){
+	// return("Branch Name: "+branchName+"; Unit Name: "+name+"; Customers
+	// waiting: " + customersWaiting+"; Waiting Time: "+waitingTime+"; Customer
+	// Served: "+customersServed + "; queue id: " + id);
+	// }
+
 	public QueueVisits getQueueVisits() {
 		return queueVisits;
 	}
@@ -120,25 +120,29 @@ public class Queue {
 		this.queueVisits = queueVisits;
 	}
 
-	public String toString(){
-		return("queue id: " + id + "; queue name: " + name + "; average wait time: " + this.getAverageWaitTimeInMinute());
+	public String toString() {
+		return ("queue id: " + id + "; queue name: " + name + "; average wait time: "
+				+ this.getAverageWaitTimeInMinute());
 	}
-	
-	public int getQueueVisitsSize(){
-		return this.getQueueVisits().getQueueVisitsSize();
+
+	public int getQueueVisitsSize() {
+		int size = 0;
+		if (this.getQueueVisits().isWsReadFlag()) {
+			size = this.getQueueVisits().getQueueVisitsSize();
+		}
+		return size;
 	}
-	
-	public int getTotalWaitTime(){
+
+	public int getTotalWaitTime() {
 		return this.getQueueVisits().getTotalWaitTime();
 	}
-	
-	public int getAverageWaitTime(){
+
+	public int getAverageWaitTime() {
 		return this.getQueueVisits().getAverageWaitTime();
 	}
-	
-	public int getAverageWaitTimeInMinute(){
+
+	public int getAverageWaitTimeInMinute() {
 		return this.getQueueVisits().getAverageWaitTimeInMinute();
 	}
-	
 
 }
