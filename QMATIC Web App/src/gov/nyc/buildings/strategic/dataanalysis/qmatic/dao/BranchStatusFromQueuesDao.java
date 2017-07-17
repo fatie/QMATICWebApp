@@ -152,7 +152,7 @@ public class BranchStatusFromQueuesDao extends Dao<BranchStatusFromQueues, Strin
 	public BranchStatusFromQueues read(String branchId) {
 		branchId = this.branchId;
 		List<Queue> queues = new ArrayList<Queue>();
-		logger.trace("reading queues informations");
+		logger.trace("reading branch " + branchName + " queue informations");
 		queues = this.getTarget().path("managementinformation").path("v2").path("branches").path(this.getBranchId())
 				.path("queues").request().accept(MediaType.APPLICATION_JSON).get(new GenericType<List<Queue>>() {
 				});

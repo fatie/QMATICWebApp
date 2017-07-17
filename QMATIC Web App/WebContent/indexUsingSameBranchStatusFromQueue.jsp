@@ -68,13 +68,13 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatus bxbs = (BranchStatus) (new BranchStatusDao("2")).read("2");
+							BranchStatusFromQueues bxbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesDao("2")).read("2");
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
 							<td>
 								<%
-									out.print(bxbs.getAverageWaitingTimeMin());
+									out.print(bxbsfq.getBranchAverageWaitTimeInMinute());
 								%>
 							</td>
 						</tr>
@@ -91,7 +91,7 @@
 							<td>Customers Waiting</td>
 							<td>
 								<%
-									out.print(bxbs.getCustomersWaiting());
+									out.print(bxbsfq.getBranchTotalWait());
 								%>
 							</td>
 						</tr>
@@ -115,13 +115,13 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatus bqbs = (BranchStatus) (new BranchStatusDao("5")).read("5");
+							BranchStatusFromQueues bqbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesDao("5")).read("5");
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
 							<td>
 								<%
-									out.print(bqbs.getAverageWaitingTimeMin());
+									out.print(bqbsfq.getBranchAverageWaitTimeInMinute());
 								%>
 							</td>
 						</tr>
@@ -138,7 +138,7 @@
 							<td>Customers Waiting</td>
 							<td>
 								<%
-									out.print(bqbs.getCustomersWaiting());
+									out.print(bqbsfq.getBranchTotalWait());
 								%>
 							</td>
 						</tr>
@@ -162,13 +162,13 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatus mbs = (BranchStatus) (new BranchStatusDao("3")).read("3");
+							BranchStatusFromQueues mbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesDao("3")).read("3");
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
 							<td>
 								<%
-									out.print(mbs.getAverageWaitingTimeMin());
+									out.print(mbsfq.getBranchAverageWaitTimeInMinute());
 								%>
 							</td>
 						</tr>
@@ -187,7 +187,7 @@
 							<td>Customers Waiting</td>
 							<td>
 								<%
-									out.print(mbs.getCustomersWaiting());
+									out.print(mbsfq.getBranchTotalWait());
 								%>
 							</td>
 						</tr>
@@ -212,13 +212,13 @@
 						</thead>
 						<tbody>
 							<%
-								BranchStatus qbs = (BranchStatus) (new BranchStatusDao("4")).read("4");
+								BranchStatusFromQueues qbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesDao("4")).read("4");
 							%>
 							<tr class="active">
 								<td>Average Wait Time (mins)</td>
 								<td>
 									<%
-										out.print(qbs.getAverageWaitingTimeMin());
+										out.print(qbsfq.getBranchAverageWaitTimeInMinute());
 									%>
 								</td>
 							</tr>
@@ -235,7 +235,7 @@
 								<td>Customers Waiting</td>
 								<td>
 									<%
-										out.print(qbs.getCustomersWaiting());
+										out.print(qbsfq.getBranchTotalWait());
 									%>
 								</td>
 							</tr>
@@ -260,13 +260,13 @@
 						</thead>
 						<tbody>
 							<%
-								BranchStatus sibs = (BranchStatus) (new BranchStatusDao("1")).read("1");
+								BranchStatusFromQueues sibsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesDao("1")).read("1");
 							%>
 							<tr class="active">
 								<td>Average Wait Time (mins)</td>
 								<td>
 									<%
-										out.print(sibs.getAverageWaitingTimeMin());
+										out.print(sibsfq.getBranchAverageWaitTimeInMinute());
 									%>
 								</td>
 							</tr>
@@ -283,7 +283,7 @@
 								<td>Customers Waiting</td>
 								<td>
 									<%
-										out.print(sibs.getCustomersWaiting());
+										out.print(sibsfq.getBranchTotalWait());
 									%>
 								</td>
 							</tr>

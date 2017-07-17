@@ -17,10 +17,20 @@
 		<servlet-name>Borough Performance Summary View</servlet-name>
 		<servlet-class>gov.nyc.buildings.strategic.dataanalysis.qmatic.web.BoroughSummaryView</servlet-class>
 	</servlet>
+	
+	<servlet>
+		<servlet-name>Central Performance Summary View</servlet-name>
+		<servlet-class>gov.nyc.buildings.strategic.dataanalysis.qmatic.web.CentralSummaryView</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>Borough Performance Summary View</servlet-name>
 		<url-pattern>/BoroughPerformance.view</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Central Performance Summary View</servlet-name>
+		<url-pattern>/CentralPerformance.view</url-pattern>
 	</servlet-mapping>
 
 </web-app>

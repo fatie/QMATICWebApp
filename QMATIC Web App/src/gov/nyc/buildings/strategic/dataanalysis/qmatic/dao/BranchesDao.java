@@ -22,7 +22,7 @@ public class BranchesDao extends Dao<List<Branch>,String> {
 	}
 	
 	public List<Branch> read() {
-		logger.trace("reading Branches informations");
+		logger.trace("reading " + branchId + "informations");
 		List<Branch> branches = this.getTarget().path("managementinformation").path("v2").path("branches").request().accept(MediaType.APPLICATION_JSON).get(new GenericType<List<Branch>>(){});
 	    return branches;
 	}
