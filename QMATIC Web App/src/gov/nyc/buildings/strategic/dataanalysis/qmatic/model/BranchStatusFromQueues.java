@@ -44,7 +44,6 @@ public class BranchStatusFromQueues {
 	
 	public int getBranchTotalWait(){
 		int sum = 0;
-		int counter = 0;
 		for (Queue queue : this.getQueues()){
 			if(queue.getQueueVisits().isWsReadFlag())
 			sum+=queue.getQueueVisitsSize();

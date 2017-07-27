@@ -121,6 +121,9 @@ public class CentralSummaryView extends HttpServlet{
 			BranchStatusFromQueues bsfq = (new BranchStatusFromQueuesDao(groupId)).read(groupId);
 			List<Queue> qs = bsfq.getQueues();
 			logger.trace("client got updated queues information, forwarding to jsp for demonstration");
+			for (Queue q: qs){
+				logger.debug(q.getName());
+			}
 			request.setAttribute("qs", qs);
 			qs.get(0).setBranchName(branchName);
 			

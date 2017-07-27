@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.BranchStatusFromQueues;
+import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.LicensingProcess;
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.Queue;
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.QueueVisit;
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.QueueVisits;
@@ -204,6 +205,7 @@ public class BranchStatusFromQueuesDao extends Dao<BranchStatusFromQueues, Strin
 				}
 			}
 			queues.retainAll(tem);
+			
 		}
 		
 		
@@ -227,6 +229,18 @@ public class BranchStatusFromQueuesDao extends Dao<BranchStatusFromQueues, Strin
 			}
 			
 		}
+		
+		if (this.getGroupId().equals("6L")){
+			LicensingProcess lp = new LicensingProcess(queues);
+			queues = lp.processing();
+			logger.debug("here");
+			for (Queue q : queues){
+				logger.debug(q.getName()+": "+q.getAverageWaitTimeInMinute() + ":"+q.getCustomersWaiting());
+		
+			}
+		}
+		
+		
 
 		BranchStatusFromQueues bsfq = new BranchStatusFromQueues();
 		bsfq.setGroupId(groupId);

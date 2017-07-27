@@ -41,7 +41,7 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>QMATIC Detailed Wait Times</title>
+<title>Detailed Wait Times</title>
 <style>
 .table {
 	border-radius: 5px;
@@ -81,7 +81,7 @@ sans-serif
 		<div class="col-md-12">
 			<div class="page-header">
 				<h2 align="center">
-					<span>QMATIC Detailed Wait Times - <%
+					<span>Detailed Wait Times - <%
 						out.print(qs.get(0).getBranchName());
 					%><img
 						align="right" alt="DOB" src="img/NYCDOB.svg.png"></span>
@@ -97,8 +97,7 @@ sans-serif
 			<th>Queue Name</th>
 			<th>Customers Waiting</th>
 			<th>Wait Time (mins)</th>
-			<th>Customers Served</th>
-
+			
 		</tr>
 
 		<%
@@ -107,11 +106,15 @@ sans-serif
 				String queueName = q.getName();
 				if (q.getBranchName().equalsIgnoreCase("Queens") && queueName.equalsIgnoreCase("Construction Developmentt")){
 					queueName = queueName.substring(0,24);
+				} else if (queueName.equalsIgnoreCase("5th-Administrative Enforcement Respondents")){
+					queueName = "AEU-Respondents"; 
+					
+				} else if(queueName.equalsIgnoreCase("5th-AEU Representatives for Respondents")) {
+					queueName = "AEU-Representatives";
 				}
 				
 				out.print("<tr><td>" + queueName + "</td><td>" + q.getCustomersWaiting() + "</td><td>"
-						+ q.getAverageWaitTimeInMinute() + "</td><td>" + q.getCustomersServed()
-						+ "</td></tr>");
+						+ q.getAverageWaitTimeInMinute() + "</td></tr>");
 			}
 			;
 		%>

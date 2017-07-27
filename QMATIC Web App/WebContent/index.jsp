@@ -21,7 +21,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>QMATIC Current Wait Times</title>
+<title>Current Wait Times</title>
 
 <link href="css/.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -33,7 +33,7 @@
 			<div class="col-md-12">
 				<div class="page-header">
 					<h2 align="center">
-						<span>QMATIC Current Wait Times<img align="right" alt="DOB"
+						<span>Current Wait Times<img align="right" alt="DOB"
 							src="img/NYCDOB.svg.png"></span>
 					</h2>
 					<div class="time">
@@ -196,102 +196,102 @@
 			</div>
 
 			<div class="col-md-4">
-					<form name="submitFormQueens" method="post"
-						action="BoroughPerformance.view">
-						<input type="hidden" name="boroughName" value="Queens">
-						<h4 class="text-center">
-							<a href="javascript:document.submitFormQueens.submit()">Queens</a>
-						</h4>
-					</form>
-					<table class="table table-condensed">
-						<thead>
-							<tr>
-								<th></th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<%
-								BranchStatus qbs = (BranchStatus) (new BranchStatusDao("4")).read("4");
-							%>
-							<tr class="active">
-								<td>Average Wait Time (mins)</td>
-								<td>
-									<%
-										out.print(qbs.getAverageWaitingTimeMin());
-									%>
-								</td>
-							</tr>
-							<!-- 						<tr class="success"> -->
-							<!-- 							<td>Customers Being Served</td> -->
-							<!-- 							<td> -->
-							<%-- 								<% --%>
-							<!-- // 									out.print(qbs.getCustomersBeingServed()); -->
-							<%-- 								%> --%>
-							<!-- 							</td> -->
-							<!-- 						</tr> -->
-							<!-- 						<tr class="warning"> -->
-							<tr class="success">
-								<td>Customers Waiting</td>
-								<td>
-									<%
-										out.print(qbs.getCustomersWaiting());
-									%>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="col-md-4">
-					<form name="submitFormStatenIsland" method="post"
-						action="BoroughPerformance.view">
-						<input type="hidden" name="boroughName" value="Staten Island">
-						<h4 class="text-center">
-							<a href="javascript:document.submitFormStatenIsland.submit()">Staten
-								Island</a>
-						</h4>
-					</form>
-					<table class="table table-condensed">
-						<thead>
-							<tr>
-								<th></th>
-								<th></th>
-							</tr>
-						</thead>
-						<tbody>
-							<%
-								BranchStatus sibs = (BranchStatus) (new BranchStatusDao("1")).read("1");
-							%>
-							<tr class="active">
-								<td>Average Wait Time (mins)</td>
-								<td>
-									<%
-										out.print(sibs.getAverageWaitingTimeMin());
-									%>
-								</td>
-							</tr>
-							<!-- 						<tr class="success"> -->
-							<!-- 							<td>Customers Being Served</td> -->
-							<!-- 							<td> -->
-							<%-- 								<% --%>
-							<!-- // 									out.print(sibs.getCustomersBeingServed()); -->
-							<%-- 								%> --%>
-							<!-- 							</td> -->
-							<!-- 						</tr> -->
-							<!-- 						<tr class="warning"> -->
-							<tr class="success">
-								<td>Customers Waiting</td>
-								<td>
-									<%
-										out.print(sibs.getCustomersWaiting());
-									%>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				<form name="submitFormQueens" method="post"
+					action="BoroughPerformance.view">
+					<input type="hidden" name="boroughName" value="Queens">
+					<h4 class="text-center">
+						<a href="javascript:document.submitFormQueens.submit()">Queens</a>
+					</h4>
+				</form>
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+							BranchStatus qbs = (BranchStatus) (new BranchStatusDao("4")).read("4");
+						%>
+						<tr class="active">
+							<td>Average Wait Time (mins)</td>
+							<td>
+								<%
+									out.print(qbs.getAverageWaitingTimeMin());
+								%>
+							</td>
+						</tr>
+						<!-- 						<tr class="success"> -->
+						<!-- 							<td>Customers Being Served</td> -->
+						<!-- 							<td> -->
+						<%-- 								<% --%>
+						<!-- // 									out.print(qbs.getCustomersBeingServed()); -->
+						<%-- 								%> --%>
+						<!-- 							</td> -->
+						<!-- 						</tr> -->
+						<!-- 						<tr class="warning"> -->
+						<tr class="success">
+							<td>Customers Waiting</td>
+							<td>
+								<%
+									out.print(qbs.getCustomersWaiting());
+								%>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
-		
+			<div class="col-md-4">
+				<form name="submitFormStatenIsland" method="post"
+					action="BoroughPerformance.view">
+					<input type="hidden" name="boroughName" value="Staten Island">
+					<h4 class="text-center">
+						<a href="javascript:document.submitFormStatenIsland.submit()">Staten
+							Island</a>
+					</h4>
+				</form>
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+							BranchStatus sibs = (BranchStatus) (new BranchStatusDao("1")).read("1");
+						%>
+						<tr class="active">
+							<td>Average Wait Time (mins)</td>
+							<td>
+								<%
+									out.print(sibs.getAverageWaitingTimeMin());
+								%>
+							</td>
+						</tr>
+						<!-- 						<tr class="success"> -->
+						<!-- 							<td>Customers Being Served</td> -->
+						<!-- 							<td> -->
+						<%-- 								<% --%>
+						<!-- // 									out.print(sibs.getCustomersBeingServed()); -->
+						<%-- 								%> --%>
+						<!-- 							</td> -->
+						<!-- 						</tr> -->
+						<!-- 						<tr class="warning"> -->
+						<tr class="success">
+							<td>Customers Waiting</td>
+							<td>
+								<%
+									out.print(sibs.getCustomersWaiting());
+								%>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
 
 		<div class="time">
 			<center>
@@ -299,9 +299,9 @@
 			</center>
 		</div>
 		<%
-							BranchStatusFromQueues cbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesDao("6")).read("6");
-						%>
-		
+			BranchStatusFromQueues cbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesDao("6")).read("6");
+		%>
+
 		<div class="row">
 			<div class="col-md-4">
 				<form name="submitFormCentral4C" method="post"
@@ -321,7 +321,8 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatusFromQueues cibsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq).getBsfqcd().get("4C"));
+							BranchStatusFromQueues cibsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
+									.getBsfqcd().get("4C"));
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
@@ -370,7 +371,8 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatusFromQueues aeubsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq).getBsfqcd().get("5A"));
+							BranchStatusFromQueues aeubsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
+									.getBsfqcd().get("5A"));
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
@@ -403,14 +405,16 @@
 
 
 			<div class="col-md-4">
-				<form name="submitFormCentral5L" method="post"
-					action="CentralPerformance.view">
-					<input type="hidden" name="groupId" value="5L">
-					<h4 class="text-center">
-						<a href="javascript:document.submitFormCentral5L.submit()">Limited
-							Alteration Applications (LAA)/Hub Authentication Unit</a>
-					</h4>
-				</form>
+				<!-- 				<form name="submitFormCentral5L" method="post" -->
+				<!-- 					action="CentralPerformance.view"> -->
+				<!-- 					<input type="hidden" name="groupId" value="5L"> -->
+				<!-- 					<h4 class="text-center"> -->
+				<!-- 						<a href="javascript:document.submitFormCentral5L.submit()">Limited -->
+				<!-- 							Alteration Applications (LAA)/Hub Authentication Unit</a> -->
+				<!-- 					</h4> -->
+				<!-- 				</form> -->
+				<h4 class="text-center">Limited Alteration Applications
+					(LAA)/Hub Authentication Unit</h4>
 				<table class="table table-condensed">
 					<thead>
 						<tr>
@@ -420,7 +424,8 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatusFromQueues laabsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq).getBsfqcd().get("5L"));
+							BranchStatusFromQueues laabsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
+									.getBsfqcd().get("5L"));
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
@@ -452,14 +457,15 @@
 			</div>
 
 			<div class="col-md-4">
-				<form name="submitFormCentral5C" method="post"
-					action="CentralPerformance.view">
-					<input type="hidden" name="groupId" value="5C">
-					<h4 class="text-center">
-						<a href="javascript:document.submitFormCentral5C.submit()">Cranes
-							and Derricks</a>
-					</h4>
-				</form>
+				<!-- 				<form name="submitFormCentral5C" method="post" -->
+				<!-- 					action="CentralPerformance.view"> -->
+				<!-- 					<input type="hidden" name="groupId" value="5C"> -->
+				<!-- 					<h4 class="text-center"> -->
+				<!-- 						<a href="javascript:document.submitFormCentral5C.submit()">Cranes -->
+				<!-- 							and Derricks</a> -->
+				<!-- 					</h4> -->
+				<!-- 				</form> -->
+				<h4 class="text-center">Cranes and Derricks</h4>
 				<table class="table table-condensed">
 					<thead>
 						<tr>
@@ -469,7 +475,8 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatusFromQueues cdbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq).getBsfqcd().get("5C"));
+							BranchStatusFromQueues cdbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
+									.getBsfqcd().get("5C"));
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
@@ -517,7 +524,8 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatusFromQueues lbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq).getBsfqcd().get("6L"));
+							BranchStatusFromQueues lbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
+									.getBsfqcd().get("6L"));
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
@@ -549,14 +557,15 @@
 			</div>
 
 			<div class="col-md-4">
-				<form name="submitFormCentral6C" method="post"
-					action="CentralPerformance.view">
-					<input type="hidden" name="groupId" value="6C">
-					<h4 class="text-center">
-						<a href="javascript:document.submitFormCentral6C.submit()">Central
-							Cashier</a>
-					</h4>
-				</form>
+				<!-- 				<form name="submitFormCentral6C" method="post" -->
+				<!-- 					action="CentralPerformance.view"> -->
+				<!-- 					<input type="hidden" name="groupId" value="6C"> -->
+				<!-- 					<h4 class="text-center"> -->
+				<!-- 						<a href="javascript:document.submitFormCentral6C.submit()">Central -->
+				<!-- 							Cashier</a> -->
+				<!-- 					</h4> -->
+				<!-- 				</form> -->
+				<h4 class="text-center">Central Cashier</h4>
 				<table class="table table-condensed">
 					<thead>
 						<tr>
@@ -566,7 +575,8 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatusFromQueues ccbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq).getBsfqcd().get("6C"));
+							BranchStatusFromQueues ccbsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
+									.getBsfqcd().get("6C"));
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
@@ -610,22 +620,21 @@
 			</div>
 
 		</div>
-	
-	<br>
-	<div class="time">
+
+		<br>
+		<div class="time">
+			<center>
+				<p>Average wait time is the average waiting time, in minutes, of
+					all customers currently waiting at each branch</p>
+			</center>
+		</div>
+		<br> <br>
 		<center>
-			<p>Average wait time is the average waiting time, in minutes, of
-				all customers currently waiting at each branch</p>
+			<form name="refresh" method="post" action="index.jsp">
+				<input type="submit" name="Refresh" value="Refresh">
+			</form>
 		</center>
 	</div>
-	<br>
-	<br>
-	<center>
-		<form name="refresh" method="post" action="index.jsp">
-			<input type="submit" name="Refresh" value="Refresh">
-		</form>
-	</center>
-</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/scripts.js"></script>
