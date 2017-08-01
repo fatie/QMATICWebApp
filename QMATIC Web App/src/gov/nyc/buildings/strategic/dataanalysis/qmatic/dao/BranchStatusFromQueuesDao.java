@@ -165,10 +165,18 @@ public class BranchStatusFromQueuesDao extends Dao<BranchStatusFromQueues, Strin
 				}
 			}
 			queues.retainAll(tem);
-		} else if (this.getGroupId().equals("5A")){
+		} else if (this.getGroupId().equals("5ARe")){
 			List<Queue> tem = new ArrayList<Queue>();
 			for (Queue q: queues){
-				if (q.getName().contains("5th-AEU Representatives for Respondents") || q.getName().contains("5th-Administrative Enforcement Respondents") ){
+				if (q.getName().contains("5th-AEU Representatives for Respondents") ){
+					tem.add(q);
+				}
+			}
+			queues.retainAll(tem);
+		} else if (this.getGroupId().equals("5APo")){
+			List<Queue> tem = new ArrayList<Queue>();
+			for (Queue q: queues){
+				if (q.getName().contains("5th-Administrative Enforcement Respondents") ){
 					tem.add(q);
 				}
 			}

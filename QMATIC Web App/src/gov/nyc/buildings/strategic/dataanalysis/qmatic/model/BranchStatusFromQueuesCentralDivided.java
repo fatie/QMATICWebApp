@@ -16,7 +16,8 @@ public class BranchStatusFromQueuesCentralDivided {
 		this.bsfq = bsfq;
 		bsfqcd = new HashMap<String, BranchStatusFromQueues>();
 		List<Queue> tem4c = new ArrayList<Queue>();
-		List<Queue> tem5a = new ArrayList<Queue>();
+		List<Queue> tem5are = new ArrayList<Queue>();
+		List<Queue> tem5apo = new ArrayList<Queue>();
 		List<Queue> tem5l = new ArrayList<Queue>();
 		List<Queue> tem5c = new ArrayList<Queue>();
 		List<Queue> tem6c = new ArrayList<Queue>();
@@ -28,8 +29,10 @@ public class BranchStatusFromQueuesCentralDivided {
 				tem4c.add(queue);
 			} else if (queue.getName().contains("5th-Appointments") || queue.getName().contains("5th-LAA") || queue.getName().contains("5th-Permit Renewal") || queue.getName().contains("5th-Priority")){
 				tem5l.add(queue);
-			} else if (queue.getName().contains("5th-AEU Representatives for Respondents") || queue.getName().contains("5th-Administrative Enforcement Respondents")){
-				tem5a.add(queue);
+			} else if (queue.getName().contains("5th-AEU Representatives for Respondents")){
+				tem5are.add(queue);
+			} else if (queue.getName().contains("5th-Administrative Enforcement Respondents")){
+				tem5apo.add(queue);
 			} else if (queue.getName().contains("5th-Cranes and Derricks")) {
 				tem5c.add(queue);
 			} else if (queue.getName().contains("6th-Central")) {
@@ -46,12 +49,19 @@ public class BranchStatusFromQueuesCentralDivided {
 		bsfq4c.setName("Central Inspections");
 		bsfq4c.setQueues(tem4c);
 		
-		BranchStatusFromQueues bsfq5a = new BranchStatusFromQueues();
-		bsfq5a.setGroupId("5A");
-		bsfq5a.setId(6);
-		bsfq5a.setGroupName("Central");
-		bsfq5a.setName("Administrative Enforcement Unit (AEU)");
-		bsfq5a.setQueues(tem5a);
+		BranchStatusFromQueues bsfq5are = new BranchStatusFromQueues();
+		bsfq5are.setGroupId("5ARe");
+		bsfq5are.setId(6);
+		bsfq5are.setGroupName("Central");
+		bsfq5are.setName("AEU-Representatives");
+		bsfq5are.setQueues(tem5are);
+		
+		BranchStatusFromQueues bsfq5apo = new BranchStatusFromQueues();
+		bsfq5apo.setGroupId("5APo");
+		bsfq5apo.setId(6);
+		bsfq5apo.setGroupName("Central");
+		bsfq5apo.setName("AEU-Respondents");
+		bsfq5apo.setQueues(tem5apo);
 		
 		BranchStatusFromQueues bsfq5l = new BranchStatusFromQueues();
 		bsfq5l.setGroupId("5L");
@@ -82,7 +92,8 @@ public class BranchStatusFromQueuesCentralDivided {
 		bsfq6c.setQueues(tem6c);
 		
 		bsfqcd.put(bsfq4c.getGroupId(), bsfq4c);
-		bsfqcd.put(bsfq5a.getGroupId(), bsfq5a);
+		bsfqcd.put(bsfq5are.getGroupId(), bsfq5are);
+		bsfqcd.put(bsfq5apo.getGroupId(), bsfq5apo);
 		bsfqcd.put(bsfq5l.getGroupId(), bsfq5l);
 		bsfqcd.put(bsfq5c.getGroupId(), bsfq5c);
 		bsfqcd.put(bsfq6l.getGroupId(), bsfq6l);

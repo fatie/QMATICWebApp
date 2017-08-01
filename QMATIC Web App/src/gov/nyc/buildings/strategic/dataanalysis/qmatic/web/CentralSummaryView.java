@@ -86,9 +86,14 @@ public class CentralSummaryView extends HttpServlet{
 			branchName = "Central Inspections";
 			break;
 		
-		case "5A":
-			branchName = "Administrative Enforcement Unit (AEU)";
+		case "5ARe":
+			branchName = "AEU-Respondents";
 			break;
+		
+		case "5APo":
+			branchName = "AEU-Representatives";
+			break;
+			
 			
 		case "5L":
 			branchName = "Limited Alteration Applications (LAA)/Hub Authentication Unit";

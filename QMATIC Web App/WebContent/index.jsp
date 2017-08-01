@@ -354,14 +354,15 @@
 			</div>
 
 			<div class="col-md-4">
-				<form name="submitFormCentral5A" method="post"
-					action="CentralPerformance.view">
-					<input type="hidden" name="groupId" value="5A">
-					<h4 class="text-center">
-						<a href="javascript:document.submitFormCentral5A.submit()">Administrative
-							Enforcement Unit (AEU)</a>
-					</h4>
-				</form>
+				<!-- 				<form name="submitFormCentral5A" method="post" -->
+				<!-- 					action="CentralPerformance.view"> -->
+				<!-- 					<input type="hidden" name="groupId" value="5ARe"> -->
+				<!-- 					<h4 class="text-center"> -->
+				<!-- 						<a href="javascript:document.submitFormCentral5A.submit()">Administrative -->
+				<!-- 							Enforcement Unit (AEU)</a> -->
+				<!-- 					</h4> -->
+				<!-- 				</form> -->
+				<h4 class="text-center">AEU-Representatives</h4>
 				<table class="table table-condensed">
 					<thead>
 						<tr>
@@ -371,14 +372,14 @@
 					</thead>
 					<tbody>
 						<%
-							BranchStatusFromQueues aeubsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
-									.getBsfqcd().get("5A"));
+							BranchStatusFromQueues aeuRebsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
+									.getBsfqcd().get("5ARe"));
 						%>
 						<tr class="active">
 							<td>Average Wait Time (mins)</td>
 							<td>
 								<%
-									out.print(aeubsfq.getBranchAverageWaitTimeInMinute());
+									out.print(aeuRebsfq.getBranchAverageWaitTimeInMinute());
 								%>
 							</td>
 						</tr>
@@ -395,13 +396,67 @@
 							<td>Customers Waiting</td>
 							<td>
 								<%
-									out.print(aeubsfq.getBranchTotalWait());
+									out.print(aeuRebsfq.getBranchTotalWait());
 								%>
 							</td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
+
+
+			<div class="col-md-4">
+				<!-- 				<form name="submitFormCentral5A" method="post" -->
+				<!-- 					action="CentralPerformance.view"> -->
+				<!-- 					<input type="hidden" name="groupId" value="5APo"> -->
+				<!-- 					<h4 class="text-center"> -->
+				<!-- 						<a href="javascript:document.submitFormCentral5A.submit()">Administrative -->
+				<!-- 							Enforcement Unit (AEU)</a> -->
+				<!-- 					</h4> -->
+				<!-- 				</form> -->
+				<h4 class="text-center">AEU-Respondents</h4>
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<%
+							BranchStatusFromQueues aeuPobsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesCentralDivided(cbsfq)
+									.getBsfqcd().get("5APo"));
+						%>
+						<tr class="active">
+							<td>Average Wait Time (mins)</td>
+							<td>
+								<%
+									out.print(aeuPobsfq.getBranchAverageWaitTimeInMinute());
+								%>
+							</td>
+						</tr>
+						<!-- 						<tr class="success"> -->
+						<!-- 							<td>Customers Being Served</td> -->
+						<!-- 							<td> -->
+						<%-- 								<% --%>
+						<!-- // 									out.print(cbs.getCustomersBeingServed()); -->
+						<%-- 								%> --%>
+						<!-- 							</td> -->
+						<!-- 						</tr> -->
+						<!-- 						<tr class="warning"> -->
+						<tr class="success">
+							<td>Customers Waiting</td>
+							<td>
+								<%
+									out.print(aeuPobsfq.getBranchTotalWait());
+								%>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+
 
 
 			<div class="col-md-4">
@@ -608,27 +663,29 @@
 			</div>
 
 
-			<div class="time">
-				<br> <br>
-				<p align="center">
-					<span>QMATIC Data As of: <%
-						DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-						Date date = new Date();
-						out.print(dateFormat.format(date));
-					%></span>
-				</p>
-			</div>
+
 
 		</div>
 
-		<br>
+		<div class="time">
+			<br> <br>
+			<p align="center">
+				<span>QMATIC Data As of: <%
+					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+					Date date = new Date();
+					out.print(dateFormat.format(date));
+				%></span>
+			</p>
+		</div>
+
+
 		<div class="time">
 			<center>
 				<p>Average wait time is the average waiting time, in minutes, of
 					all customers currently waiting at each branch</p>
 			</center>
 		</div>
-		<br> <br>
+
 		<center>
 			<form name="refresh" method="post" action="index.jsp">
 				<input type="submit" name="Refresh" value="Refresh">
