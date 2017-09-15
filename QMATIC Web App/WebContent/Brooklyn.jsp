@@ -4,15 +4,18 @@
 	import="gov.nyc.buildings.strategic.dataanalysis.qmatic.model.*"%>
 
 <%@ page import="gov.nyc.buildings.strategic.dataanalysis.qmatic.dao.*"%>
+	
+<%@ page
+	import="gov.nyc.buildings.strategic.dataanalysis.qmatic.model.Queue"%>	
 
 <%@ page
-	import="gov.nyc.buildings.strategic.dataanalysis.qmatic.model.Queue"%>
-
-<%@ page import="java.util.*"%>
-
-<%@ page import="java.text.DateFormat"%>
-
-<%@ page import="java.text.SimpleDateFormat"%>
+	import="java.util.*"%>
+	
+<%@ page
+	import="java.text.DateFormat"%>
+	
+<%@ page
+	import="java.text.SimpleDateFormat"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -73,62 +76,66 @@ sans-serif
 </style>
 </head>
 <body>
-	<%
-		List<Queue> qs = (List<Queue>) request.getAttribute("qs");
-	%>
-
+	<div class="container-fluid">
 	<div class="row">
-		<div class="col-md-12">
-			<div class="page-header">
-				<h2 align="center">
-					<span><img align="left"
-							 src="img/blank.gif">Detailed Wait Times - <%
-						out.print(qs.get(0).getBranchName());
-					%><img
-						align="right" alt="DOB" src="img/NYCDOB.svg.png"></span>
-				</h2>
+			<div class="col-md-12">
+				<div class="page-header">
+					<h2 align="center">
+						<span><img align="left"
+							 src="img/blank.gif">Detailed Wait Times - Brooklyn<img align="right"
+							alt="DOB" src="img/NYCDOB.svg.png"></span>
+					</h2>
+				</div>
 			</div>
+
 		</div>
-
-	</div>
-
+	<%
+		List<Queue> qs = (List<Queue>) (new QueuesDao("5")).read("5");;
+	%>
 	<table class="table table-hover table-condensed table-bordered">
 		<tr>
 		<tr class="warning">
-			<th>Queue Name</th>
-			<th>Customers Waiting</th>
-			<th>Wait Time (mins)</th>
-			
+		<th>Queue Name</th>
+		<th>Customers Waiting</th>
+		<th>Waiting Time (mins)</th>
+		
 		</tr>
-
+	
 		<%
-			for (Queue q : qs) {
-				
-				String queueName = q.getName();
-				if (q.getBranchName().equalsIgnoreCase("Queens") && queueName.equalsIgnoreCase("Construction Developmentt")){
-					queueName = queueName.substring(0,24);
-				} else if (queueName.equalsIgnoreCase("5th-Administrative Enforcement Respondents")){
-					queueName = "AEU-Respondents"; 
-					
-				} else if(queueName.equalsIgnoreCase("5th-AEU Representatives for Respondents")) {
-					queueName = "AEU-Representatives";
-				}
-				
-				out.print("<tr><td>" + queueName + "</td><td>" + q.getCustomersWaiting() + "</td><td>"
-						+ q.getAverageWaitTimeInMinute() + "</td></tr>");
+		
+		for (Queue q: qs){
+			String ewt;
+			if (q.getEstimatedWaitingTime()== -1){
+				ewt = "N/A";
+			} else {
+				ewt = String.valueOf(q.getEstimatedWaitingTime()/60);
 			}
-			;
+			out.print("<tr><td>"+q.getName()+"</td><td>"+q.getCustomersWaiting()+"</td><td>"+q.getWaitingTime()/60+"</td></tr>");
+		};
 		%>
 	</table>
-	<br>
 	<div class="time">
-	<center>
-	<p>Wait Time is average wait time, in minutes, of all customers currently waiting at each queue for specific branches</p></center></div>
-	<br><br>
-	<center>
-		<form name="movingBack" method="post" action="Central.jsp">
-			<input type="submit" name="Back" value="Back">
-		</form>
-	</center>
+			<br> <br>
+			<p align="center">
+				<span>QMATIC Data As of: <%
+					DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+					Date date = new Date();
+					out.print(dateFormat.format(date));
+				%></span>
+			</p>
+		</div>
+	
+	<div class="time">
+			<center>
+				<p>Wait Time is average wait time, in minutes, of all customers currently waiting at each queue for specific branches</p>
+			</center>
+		</div>
+
+		<center>
+			<form name="refresh" method="post" action="Brooklyn.jsp">
+				<input type="submit" name="Refresh" value="Refresh">
+			</form>
+		</center>
+	</div>
 </body>
 </html>
