@@ -82,7 +82,7 @@ sans-serif
 				<div class="page-header">
 					<h2 align="center">
 						<span><img align="left"
-							 src="img/blank.gif">Detailed Wait Times - Brooklyn<img align="right"
+							 src="img/blank.gif">Detailed Wait Times - Brooklyn Borough Office<img align="right"
 							alt="DOB" src="img/NYCDOB.svg.png"></span>
 					</h2>
 				</div>
@@ -110,7 +110,7 @@ sans-serif
 			} else {
 				ewt = String.valueOf(q.getEstimatedWaitingTime()/60);
 			}
-			out.print("<tr><td>"+q.getName()+"</td><td>"+q.getCustomersWaiting()+"</td><td>"+q.getWaitingTime()/60+"</td></tr>");
+			out.print("<tr><td>"+(q.getName().equalsIgnoreCase("Prof Prioirty Fast App")?"Prof Priority Fast App":q.getName())+"</td><td>"+q.getCustomersWaiting()+"</td><td>"+q.getWaitingTime()/60+"</td></tr>");
 		};
 		%>
 	</table>

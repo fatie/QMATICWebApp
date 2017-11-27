@@ -83,7 +83,7 @@ sans-serif
 				<div class="page-header">
 					<h2 align="center">
 						<span><img align="left"
-							 src="img/blank.gif">Detailed Wait Times - Staten Island<img align="right"
+							 src="img/blank.gif">Detailed Wait Times - Staten Island Borough Office<img align="right"
 							alt="DOB" src="img/NYCDOB.svg.png"></span>
 					</h2>
 				</div>

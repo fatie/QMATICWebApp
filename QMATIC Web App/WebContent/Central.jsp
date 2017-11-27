@@ -34,7 +34,7 @@
 				<div class="page-header">
 					<h2 align="center">
 						<span class="text-center"><img align="left"
-							src="img/blank.gif">Current Wait Times - Central<img
+							src="img/blank.gif">Current Wait Times - Central Unit (280 Broadway)<img
 							align="right" alt="DOB" src="img/NYCDOB.svg.png"></span>
 					</h2>
 					<div class="time">

@@ -16,6 +16,9 @@
 	
 <%@ page
 	import="java.text.SimpleDateFormat"%>
+	
+<%@ page
+	import="gov.nyc.buildings.strategic.dataanalysis.qmatic.util.QueueNameCompare"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -83,7 +86,7 @@ sans-serif
 				<div class="page-header">
 					<h2 align="center">
 						<span><img align="left"
-							 src="img/blank.gif">Detailed Wait Times - Queens<img align="right"
+							 src="img/blank.gif">Detailed Wait Times - Queens Borough Office<img align="right"
 							alt="DOB" src="img/NYCDOB.svg.png"></span>
 					</h2>
 				</div>
@@ -104,7 +107,6 @@ sans-serif
 		</tr>
 	
 		<%
-		
 		for (Queue q: qs){
 			String ewt;
 			if (q.getEstimatedWaitingTime()== -1){
@@ -112,7 +114,7 @@ sans-serif
 			} else {
 				ewt = String.valueOf(q.getEstimatedWaitingTime()/60);
 			}
-			out.print("<tr><td>"+q.getName()+"</td><td>"+q.getCustomersWaiting()+"</td><td>"+q.getWaitingTime()/60+"</td></tr>");
+			out.print("<tr><td>"+(q.getName().equalsIgnoreCase("Construction Developmentt")?"Construction Development":q.getName())+"</td><td>"+q.getCustomersWaiting()+"</td><td>"+q.getWaitingTime()/60+"</td></tr>");
 		};
 		%>
 	</table>

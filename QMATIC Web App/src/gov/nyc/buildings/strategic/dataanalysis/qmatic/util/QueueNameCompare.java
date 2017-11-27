@@ -8,7 +8,7 @@ public class QueueNameCompare implements Comparator<Queue> {
 
 	@Override
 	public int compare(Queue o1, Queue o2) {
-		return o1.getName().compareTo(o2.getName());
+		return o1.getName().trim().compareTo(o2.getName().trim());
 	}
  
 }
