@@ -91,12 +91,13 @@ sans-serif
 
 		</div>
 	<%
-		List<Queue> qs = (List<Queue>) (new QueuesDao("3")).read("3");;
+	BranchStatusFromQueues bsfq = (BranchStatusFromQueues) (new BranchStatusFromQueuesDao("3")).read("3");
+	List<Queue> qs = bsfq.getQueues();
 	%>
 	<table class="table table-hover table-condensed table-bordered">
 		<tr>
 		<tr class="warning">
-		<th>Queue Name</th>
+		<th>Unit Name</th>
 		<th>Customers Waiting</th>
 		<th>Waiting Time (mins)</th>
 		
@@ -112,7 +113,7 @@ sans-serif
 			} else {
 				ewt = String.valueOf(q.getEstimatedWaitingTime()/60);
 			}
-			out.print("<tr><td>"+q.getName()+"</td><td>"+q.getCustomersWaiting()+"</td><td>"+q.getWaitingTime()/60+"</td></tr>");
+			out.print("<tr><td>"+q.getName()+"</td><td>"+q.getQueueVisitsSize()+"</td><td>"+q.getAverageWaitTimeInMinute()+"</td></tr>");
 		};
 		%>
 	</table>

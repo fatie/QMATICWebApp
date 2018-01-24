@@ -1,6 +1,7 @@
 package gov.nyc.buildings.strategic.dataanalysis.qmatic.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.ws.rs.core.GenericType;
@@ -14,6 +15,7 @@ import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.LicensingProcess;
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.Queue;
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.QueueVisit;
 import gov.nyc.buildings.strategic.dataanalysis.qmatic.model.QueueVisits;
+import gov.nyc.buildings.strategic.dataanalysis.qmatic.util.QueueNameCompare;
 
 public class BranchStatusFromQueuesDao extends Dao<BranchStatusFromQueues, String> {
 
@@ -248,7 +250,8 @@ public class BranchStatusFromQueuesDao extends Dao<BranchStatusFromQueues, Strin
 			}
 		}
 		
-		
+		QueueNameCompare queueNameCompare = new QueueNameCompare();
+		Collections.sort(queues, queueNameCompare);
 
 		BranchStatusFromQueues bsfq = new BranchStatusFromQueues();
 		bsfq.setGroupId(groupId);
